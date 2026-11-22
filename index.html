@@ -1,78 +1,349 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sebez Cafe</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #ffffff;
-            color: #333;
-            text-align: center;
-        }
-        header {
-            background: #174B35;
-            color: #D4AF37;
-            padding: 35px 15px;
-        }
-        header h1 {
-            font-size: 38px;
-        }
-        section {
-            padding: 30px 15px;
-        }
-        .menu {
-            background: white;
-            margin: 15px auto;
-            padding: 15px;
-            max-width: 350px;
-            border-radius: 12px;
-        }
-        footer {
-            background: #442719;
-            color: white;
-            padding: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sebez Cafe | Delicious Moments</title>
+<style>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #26352c;
+  background: #fff;
+}
+header {
+  background: #174b35;
+  color: white;
+  padding: 18px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo {
+  color: #e5bd45;
+  font-size: 25px;
+  font-weight: bold;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 8px;
+  font-size: 14px;
+}
+.hero {
+  background: linear-gradient(#103b2bd9,#103b2bd9),
+  url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1400");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+.hero h1 {
+  color: #e5bd45;
+  font-size: 45px;
+  margin-bottom: 12px;
+}
+.hero p { font-size: 19px; }
+.btn {
+  display: inline-block;
+  background: #d9ae32;
+  color: #173e2d;
+  padding: 13px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+}
+section {
+  padding: 55px 6%;
+  text-align: center;
+}
+h2 {
+  color: #174b35;
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+.intro {
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.8;
+}
+.menu-section { background: #f7f7f1; }
+.category-title {
+  color: #b58b1e;
+  margin: 38px 0 20px;
+  font-size: 25px;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 22px;
+  max-width: 1100px;
+  margin: auto;
+}
+.card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px #00000012;
+  text-align: left;
+}
+.card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+.card-content { padding: 16px; }
+.card h3 {
+  color: #174b35;
+  margin: 0 0 9px;
+}
+.card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 40px;
+}
+.price {
+  color: #b58b1e;
+  font-weight: bold;
+  font-size: 18px;
+}
+.about {
+  background: white;
+}
+.contact {
+  background: #174b35;
+  color: white;
+}
+.contact h2 { color: #e5bd45; }
+footer {
+  background: #103525;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+@media(max-width:600px) {
+  header { justify-content: center; gap: 12px; }
+  nav { text-align: center; }
+  nav a { display: inline-block; margin: 7px; }
+  .hero h1 { font-size: 34px; }
+  section { padding: 40px 5%; }
+}
+</style>
 </head>
 <body>
 
 <header>
-    <h1>Sebez Cafe</h1>
-    <p>Welcome to our cafe!</p>
+  <div class="logo">☕ Sebez Cafe</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<section>
-    <h2>About Us</h2>
-    <p>Welcome to Sebez Cafe.
-    Enjoy delicious food, coffee and a
-    wonderful experience with us.</p>
+<div class="hero" id="home">
+  <h1>Welcome to Sebez Cafe</h1>
+  <p>Delicious Food. Fresh Coffee. Beautiful Moments.</p>
+  <a class="btn" href="#menu">Explore Our Menu</a>
+</div>
+
+<section class="about" id="about">
+  <h2>About Sebez Cafe</h2>
+  <p class="intro">
+    Welcome to Sebez Cafe! Enjoy delicious meals,
+    fresh drinks and wonderful coffee in a warm
+    and welcoming atmosphere. We look forward
+    to serving you!
+  </p>
 </section>
 
-<section>
-    <h2>Our Menu</h2>
+<section class="menu-section" id="menu">
+  <h2>Our Delicious Menu</h2>
+  <p>Freshly prepared with love at Sebez Cafe.</p>
 
-    <div class="menu">
-        <h3>Ethiopian Coffee</h3>
-        <p>Fresh and delicious coffee.</p>
+  <h3 class="category-title">🍕 Pizza</h3>
+  <div class="menu-grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=600" alt="Special pizza">
+      <div class="card-content">
+        <h3>Sebez Special Pizza</h3>
+        <p>Mozzarella, tomato sauce, chili, egg, chicken, mushroom and olive.</p>
+        <div class="price">700 ETB</div>
+      </div>
     </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=600" alt="Margarita pizza">
+      <div class="card-content">
+        <h3>Margarita Pizza</h3>
+        <p>Mozzarella cheese, tomato sauce and chili.</p>
+        <div class="price">480 ETB</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600" alt="Chicken pizza">
+      <div class="card-content">
+        <h3>Chicken Pizza</h3>
+        <p>Mozzarella cheese, tomato sauce, chili and chicken.</p>
+        <div class="price">530 ETB</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Beef pizza">
+      <div class="card-content">
+        <h3>Beef Pizza</h3>
+        <p>Mozzarella cheese, tomato sauce, chili and beef.</p>
+        <div class="price">470 ETB</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=600" alt="Vegetable pizza">
+      <div class="card-content">
+        <h3>Vegetable Pizza</h3>
+        <p>Vegetables, tomato sauce, chili, carrot and olive.</p>
+        <div class="price">390 ETB</div>
+      </div>
+    </div>
+  </div>
 
-    <div class="menu">
-        <h3>Tea</h3>
-        <p>Enjoy a warm cup of tea.</p>
+  <h3 class="category-title">🍔 Burgers</h3>
+  <div class="menu-grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600" alt="Beef burger">
+      <div class="card-content">
+        <h3>Beef Burger</h3>
+        <p>Beef, lettuce, tomato, onion, chili and French fries.</p>
+        <div class="price">370 ETB</div>
+      </div>
     </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433a?w=600" alt="Cheese burger">
+      <div class="card-content">
+        <h3>Cheese Burger</h3>
+        <p>Cheese, lettuce, tomato, onion, chili and French fries.</p>
+        <div class="price">480 ETB</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600" alt="Special burger">
+      <div class="card-content">
+        <h3>Special Burger</h3>
+        <p>Beef, egg, cheese, lettuce, tomato and onion.</p>
+        <div class="price">500 ETB</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600" alt="Double burger">
+      <div class="card-content">
+        <h3>Sebez Double Special</h3>
+        <p>Double beef, egg, cheese, lettuce, tomato and onion.</p>
+        <div class="price">580 ETB</div>
+      </div>
+    </div>
+  </div>
 
-    <div class="menu">
-        <h3>Fresh Juice</h3>
-        <p>Refreshing natural juice.</p>
+  <h3 class="category-title">🥪 Sandwiches</h3>
+  <div class="menu-grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600" alt="Egg sandwich">
+      <div class="card-content">
+        <h3>Egg Sandwich</h3>
+        <p>Freshly prepared egg sandwich.</p>
+        <div class="price">250 ETB</div>
+      </div>
     </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=600" alt="Tuna sandwich">
+      <div class="card-content">
+        <h3>Tuna Sandwich</h3>
+        <p>Delicious tuna sandwich.</p>
+        <div class="price">350 ETB</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1567234669003-dce7a7a88821?w=600" alt="Club sandwich">
+      <div class="card-content">
+        <h3>Club Sandwich</h3>
+        <p>A tasty and filling club sandwich.</p>
+        <div class="price">400 ETB</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600" alt="Fasting club sandwich">
+      <div class="card-content">
+        <h3>Fasting Club Sandwich</h3>
+        <p>A delicious fasting-friendly sandwich.</p>
+        <div class="price">230 ETB</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="category-title">🥗 Salads</h3>
+  <div class="menu-grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600" alt="Tuna salad">
+      <div class="card-content">
+        <h3>Tuna Salad</h3>
+        <p>Fresh salad with tuna.</p>
+        <div class="price">320 ETB</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600" alt="Special salad">
+      <div class="card-content">
+        <h3>Special Salad</h3>
+        <p>A fresh and delicious special salad.</p>
+        <div class="price">350 ETB</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="category-title">🌯 Wraps</h3>
+  <div class="menu-grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600" alt="Chicken wrap">
+      <div class="card-content">
+        <h3>Chicken Wrap</h3>
+        <p>Chicken, cheese and French fries.</p>
+        <div class="price">380 ETB</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600" alt="Beef wrap">
+      <div class="card-content">
+        <h3>Beef Wrap</h3>
+        <p>Beef, cheese and French fries.</p>
+        <div class="price">350 ETB</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600" alt="Vegetable wrap">
+      <div class="card-content">
+        <h3>Vegetable Wrap</h3>
+        <p>Vegetables and French fries.</p>
+        <div class="price">280 ETB</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Visit Sebez Cafe</h2>
+  <p>We look forward to welcoming you!</p>
+  <p>Contact and WhatsApp ordering details coming soon.</p>
 </section>
 
 <footer>
-    <h2>Contact Sebez Cafe</h2>
-    <p>Visit us today!</p>
+  © 2026 Sebez Cafe. All Rights Reserved.
+  <p>Delicious Moments, Every Day!</p>
 </footer>
 
 </body>
