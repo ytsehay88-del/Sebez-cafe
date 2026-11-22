@@ -5,35 +5,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sebez Cafe | Delicious Moments</title>
+
 <style>
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #26352c;
-  background: #fff;
+  background: white;
 }
+
 header {
   background: #174b35;
   color: white;
-  padding: 18px 6%;
+  padding: 18px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  gap: 12px;
 }
+
 .logo {
   color: #e5bd45;
   font-size: 25px;
   font-weight: bold;
 }
+
 nav a {
   color: white;
   text-decoration: none;
-  margin: 8px;
+  margin: 7px;
   font-size: 14px;
 }
+
 .hero {
   background: linear-gradient(#103b2bd9,#103b2bd9),
   url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1400");
@@ -41,51 +48,61 @@ nav a {
   background-position: center;
   color: white;
   text-align: center;
-  padding: 100px 20px;
+  padding: 90px 20px;
 }
+
 .hero h1 {
   color: #e5bd45;
-  font-size: 45px;
-  margin-bottom: 12px;
+  font-size: 40px;
 }
-.hero p { font-size: 19px; }
+
+.hero p { font-size: 18px; }
+
 .btn {
   display: inline-block;
-  background: #d9ae32;
-  color: #173e2d;
-  padding: 13px 25px;
+  background: #e5bd45;
+  color: #174b35;
+  padding: 13px 24px;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 15px;
+  margin: 8px;
+  border: none;
+  cursor: pointer;
 }
+
 section {
-  padding: 55px 6%;
+  padding: 45px 5%;
   text-align: center;
 }
+
 h2 {
   color: #174b35;
   font-size: 30px;
-  margin-bottom: 12px;
 }
+
 .intro {
   max-width: 650px;
   margin: auto;
   line-height: 1.8;
 }
+
 .menu-section { background: #f7f7f1; }
+
 .category-title {
   color: #b58b1e;
-  margin: 38px 0 20px;
+  margin: 40px 0 20px;
   font-size: 25px;
 }
+
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 22px;
+  gap: 20px;
   max-width: 1100px;
   margin: auto;
 }
+
 .card {
   background: white;
   border-radius: 14px;
@@ -93,51 +110,101 @@ h2 {
   box-shadow: 0 4px 15px #00000012;
   text-align: left;
 }
+
 .card img {
   width: 100%;
-  height: 170px;
+  height: 155px;
   object-fit: cover;
 }
-.card-content { padding: 16px; }
+
+.card-content { padding: 15px; }
+
 .card h3 {
   color: #174b35;
-  margin: 0 0 9px;
+  margin: 0 0 8px;
 }
+
 .card p {
   color: #666;
   font-size: 14px;
   line-height: 1.5;
-  min-height: 40px;
 }
+
 .price {
   color: #b58b1e;
   font-weight: bold;
   font-size: 18px;
 }
-.about {
+
+.add-btn {
+  background: #174b35;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 7px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.cart {
+  max-width: 750px;
+  margin: 35px auto;
+  padding: 22px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 3px 15px #00000015;
+  text-align: left;
+}
+
+.cart h3 { color: #174b35; }
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 7px;
   background: white;
 }
+
 .contact {
   background: #174b35;
   color: white;
 }
+
 .contact h2 { color: #e5bd45; }
+
+.contact a {
+  color: #e5bd45;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 footer {
   background: #103525;
   color: white;
   text-align: center;
-  padding: 20px;
-  font-size: 14px;
+  padding: 22px;
 }
+
 @media(max-width:600px) {
-  header { justify-content: center; gap: 12px; }
+  header { justify-content: center; }
   nav { text-align: center; }
-  nav a { display: inline-block; margin: 7px; }
-  .hero h1 { font-size: 34px; }
-  section { padding: 40px 5%; }
+  nav a { display: inline-block; }
+  .hero h1 { font-size: 32px; }
+  section { padding: 35px 5%; }
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -146,6 +213,7 @@ footer {
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#menu">Menu</a>
+    <a href="#order">Order</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -156,195 +224,334 @@ footer {
   <a class="btn" href="#menu">Explore Our Menu</a>
 </div>
 
-<section class="about" id="about">
+<section id="about">
   <h2>About Sebez Cafe</h2>
   <p class="intro">
-    Welcome to Sebez Cafe! Enjoy delicious meals,
-    fresh drinks and wonderful coffee in a warm
-    and welcoming atmosphere. We look forward
-    to serving you!
+    Welcome to Sebez Cafe! Enjoy delicious traditional
+    Ethiopian meals, fresh drinks, pizza, burgers and
+    wonderful coffee in a warm and welcoming atmosphere.
+    We look forward to serving you!
   </p>
 </section>
 
 <section class="menu-section" id="menu">
-  <h2>Our Delicious Menu</h2>
-  <p>Freshly prepared with love at Sebez Cafe.</p>
+<h2>Our Delicious Menu</h2>
+<p>Freshly prepared with love at Sebez Cafe.</p>
 
-  <h3 class="category-title">🍕 Pizza</h3>
-  <div class="menu-grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=600" alt="Special pizza">
-      <div class="card-content">
-        <h3>Sebez Special Pizza</h3>
-        <p>Mozzarella, tomato sauce, chili, egg, chicken, mushroom and olive.</p>
-        <div class="price">700 ETB</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=600" alt="Margarita pizza">
-      <div class="card-content">
-        <h3>Margarita Pizza</h3>
-        <p>Mozzarella cheese, tomato sauce and chili.</p>
-        <div class="price">480 ETB</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600" alt="Chicken pizza">
-      <div class="card-content">
-        <h3>Chicken Pizza</h3>
-        <p>Mozzarella cheese, tomato sauce, chili and chicken.</p>
-        <div class="price">530 ETB</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Beef pizza">
-      <div class="card-content">
-        <h3>Beef Pizza</h3>
-        <p>Mozzarella cheese, tomato sauce, chili and beef.</p>
-        <div class="price">470 ETB</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=600" alt="Vegetable pizza">
-      <div class="card-content">
-        <h3>Vegetable Pizza</h3>
-        <p>Vegetables, tomato sauce, chili, carrot and olive.</p>
-        <div class="price">390 ETB</div>
-      </div>
-    </div>
-  </div>
+<h3 class="category-title">🇪🇹 Traditional Ethiopian Food</h3>
+<div class="menu-grid">
 
-  <h3 class="category-title">🍔 Burgers</h3>
-  <div class="menu-grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600" alt="Beef burger">
-      <div class="card-content">
-        <h3>Beef Burger</h3>
-        <p>Beef, lettuce, tomato, onion, chili and French fries.</p>
-        <div class="price">370 ETB</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433a?w=600" alt="Cheese burger">
-      <div class="card-content">
-        <h3>Cheese Burger</h3>
-        <p>Cheese, lettuce, tomato, onion, chili and French fries.</p>
-        <div class="price">480 ETB</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600" alt="Special burger">
-      <div class="card-content">
-        <h3>Special Burger</h3>
-        <p>Beef, egg, cheese, lettuce, tomato and onion.</p>
-        <div class="price">500 ETB</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600" alt="Double burger">
-      <div class="card-content">
-        <h3>Sebez Double Special</h3>
-        <p>Double beef, egg, cheese, lettuce, tomato and onion.</p>
-        <div class="price">580 ETB</div>
-      </div>
-    </div>
-  </div>
+<div class="card"><div class="card-content">
+<h3>Beyaynet</h3><p>Traditional Ethiopian mixed platter.</p>
+<div class="price">290 ETB</div>
+<button class="add-btn" data-name="Beyaynet" data-price="290">Add to Cart</button>
+</div></div>
 
-  <h3 class="category-title">🥪 Sandwiches</h3>
-  <div class="menu-grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600" alt="Egg sandwich">
-      <div class="card-content">
-        <h3>Egg Sandwich</h3>
-        <p>Freshly prepared egg sandwich.</p>
-        <div class="price">250 ETB</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1553909489-cd47e0ef937f?w=600" alt="Tuna sandwich">
-      <div class="card-content">
-        <h3>Tuna Sandwich</h3>
-        <p>Delicious tuna sandwich.</p>
-        <div class="price">350 ETB</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1567234669003-dce7a7a88821?w=600" alt="Club sandwich">
-      <div class="card-content">
-        <h3>Club Sandwich</h3>
-        <p>A tasty and filling club sandwich.</p>
-        <div class="price">400 ETB</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600" alt="Fasting club sandwich">
-      <div class="card-content">
-        <h3>Fasting Club Sandwich</h3>
-        <p>A delicious fasting-friendly sandwich.</p>
-        <div class="price">230 ETB</div>
-      </div>
-    </div>
-  </div>
+<div class="card"><div class="card-content">
+<h3>Tegabino</h3><p>Traditional Ethiopian chickpea stew.</p>
+<div class="price">200 ETB</div>
+<button class="add-btn" data-name="Tegabino" data-price="200">Add to Cart</button>
+</div></div>
 
-  <h3 class="category-title">🥗 Salads</h3>
-  <div class="menu-grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600" alt="Tuna salad">
-      <div class="card-content">
-        <h3>Tuna Salad</h3>
-        <p>Fresh salad with tuna.</p>
-        <div class="price">320 ETB</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600" alt="Special salad">
-      <div class="card-content">
-        <h3>Special Salad</h3>
-        <p>A fresh and delicious special salad.</p>
-        <div class="price">350 ETB</div>
-      </div>
-    </div>
-  </div>
+<div class="card"><div class="card-content">
+<h3>Sero Feses</h3>
+<div class="price">170 ETB</div>
+<button class="add-btn" data-name="Sero Feses" data-price="170">Add to Cart</button>
+</div></div>
 
-  <h3 class="category-title">🌯 Wraps</h3>
-  <div class="menu-grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600" alt="Chicken wrap">
-      <div class="card-content">
-        <h3>Chicken Wrap</h3>
-        <p>Chicken, cheese and French fries.</p>
-        <div class="price">380 ETB</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600" alt="Beef wrap">
-      <div class="card-content">
-        <h3>Beef Wrap</h3>
-        <p>Beef, cheese and French fries.</p>
-        <div class="price">350 ETB</div>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600" alt="Vegetable wrap">
-      <div class="card-content">
-        <h3>Vegetable Wrap</h3>
-        <p>Vegetables and French fries.</p>
-        <div class="price">280 ETB</div>
-      </div>
-    </div>
-  </div>
+<div class="card"><div class="card-content">
+<h3>Pasta Be Sego</h3>
+<div class="price">220 ETB</div>
+<button class="add-btn" data-name="Pasta Be Sego" data-price="220">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Pasta Be Atekelt</h3>
+<div class="price">270 ETB</div>
+<button class="add-btn" data-name="Pasta Be Atekelt" data-price="270">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Tematim Lebleb</h3>
+<div class="price">180 ETB</div>
+<button class="add-btn" data-name="Tematim Lebleb" data-price="180">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Suf Feteft</h3>
+<div class="price">180 ETB</div>
+<button class="add-btn" data-name="Suf Feteft" data-price="180">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Telba Fetft</h3>
+<div class="price">200 ETB</div>
+<button class="add-btn" data-name="Telba Fetft" data-price="200">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Atekelt Shorba</h3>
+<div class="price">180 ETB</div>
+<button class="add-btn" data-name="Atekelt Shorba" data-price="180">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Pasta Be Tuna</h3>
+<div class="price">350 ETB</div>
+<button class="add-btn" data-name="Pasta Be Tuna" data-price="350">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Chechebsa</h3>
+<div class="price">200 ETB</div>
+<button class="add-btn" data-name="Chechebsa" data-price="200">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Ful</h3>
+<div class="price">150 ETB</div>
+<button class="add-btn" data-name="Ful" data-price="150">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Tebs</h3>
+<div class="price">380 ETB</div>
+<button class="add-btn" data-name="Tebs" data-price="380">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Dulet</h3>
+<div class="price">370 ETB</div>
+<button class="add-btn" data-name="Dulet" data-price="370">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Kuanta Fere</h3>
+<div class="price">380 ETB</div>
+<button class="add-btn" data-name="Kuanta Fere" data-price="380">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Sega Ferfer</h3>
+<div class="price">370 ETB</div>
+<button class="add-btn" data-name="Sega Ferfer" data-price="370">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Tebes Ferfer</h3>
+<div class="price">350 ETB</div>
+<button class="add-btn" data-name="Tebes Ferfer" data-price="350">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Dekak Tebes</h3>
+<div class="price">380 ETB</div>
+<button class="add-btn" data-name="Dekak Tebes" data-price="380">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Bozena Shero</h3>
+<div class="price">300 ETB</div>
+<button class="add-btn" data-name="Bozena Shero" data-price="300">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Shero Be Kebe</h3>
+<div class="price">250 ETB</div>
+<button class="add-btn" data-name="Shero Be Kebe" data-price="250">Add to Cart</button>
+</div></div>
+
+<div class="card"><div class="card-content">
+<h3>Pasta Be Sega</h3>
+<p>Please ask us for the current price.</p>
+<button class="add-btn" data-name="Pasta Be Sega" data-price="0">Add to Cart</button>
+</div></div>
+
+</div>
+
+<h3 class="category-title">🍕 Pizza</h3>
+<div class="menu-grid">
+
+<div class="card"><img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=600" alt="Pizza"><div class="card-content">
+<h3>Sebez Special Pizza</h3><p>Mozzarella, tomato sauce, chili, egg, chicken, mushroom and olive.</p><div class="price">700 ETB</div><button class="add-btn" data-name="Sebez Special Pizza" data-price="700">Add to Cart</button></div></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=600" alt="Pizza"><div class="card-content">
+<h3>Margarita Pizza</h3><p>Mozzarella cheese, tomato sauce and chili.</p><div class="price">480 ETB</div><button class="add-btn" data-name="Margarita Pizza" data-price="480">Add to Cart</button></div></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600" alt="Pizza"><div class="card-content">
+<h3>Chicken Pizza</h3><p>Mozzarella cheese, tomato sauce, chili and chicken.</p><div class="price">530 ETB</div><button class="add-btn" data-name="Chicken Pizza" data-price="530">Add to Cart</button></div></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Pizza"><div class="card-content">
+<h3>Beef Pizza</h3><p>Mozzarella cheese, tomato sauce, chili and beef.</p><div class="price">470 ETB</div><button class="add-btn" data-name="Beef Pizza" data-price="470">Add to Cart</button></div></div>
+
+<div class="card"><div class="card-content">
+<h3>Fasting Tuna Pizza</h3><p>Tomato sauce, chili and tuna.</p><div class="price">480 ETB</div><button class="add-btn" data-name="Fasting Tuna Pizza" data-price="480">Add to Cart</button></div></div>
+
+<div class="card"><div class="card-content">
+<h3>Vegetable Pizza</h3><p>Cabbage, tomato sauce, chili, carrot and olive.</p><div class="price">390 ETB</div><button class="add-btn" data-name="Vegetable Pizza" data-price="390">Add to Cart</button></div></div>
+
+<div class="card"><div class="card-content">
+<h3>Tuna with Vegetable Pizza</h3><div class="price">460 ETB</div><button class="add-btn" data-name="Tuna with Vegetable Pizza" data-price="460">Add to Cart</button></div></div>
+
+<div class="card"><div class="card-content">
+<h3>Tuna Pizza</h3><div class="price">480 ETB</div><button class="add-btn" data-name="Tuna Pizza" data-price="480">Add to Cart</button></div></div>
+
+</div>
+
+<h3 class="category-title">🍔 Burgers</h3>
+<div class="menu-grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600" alt="Burger"><div class="card-content"><h3>Beef Burger</h3><p>Beef, lettuce, tomato, onion, chili and French fries.</p><div class="price">370 ETB</div><button class="add-btn" data-name="Beef Burger" data-price="370">Add to Cart</button></div></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1553979459-d2229ba7433a?w=600" alt="Burger"><div class="card-content"><h3>Cheese Burger</h3><p>Cheese, lettuce, tomato, onion, chili and French fries.</p><div class="price">480 ETB</div><button class="add-btn" data-name="Cheese Burger" data-price="480">Add to Cart</button></div></div>
+
+<div class="card"><div class="card-content"><h3>Special Burger</h3><p>Beef, egg, cheese, lettuce, tomato and onion.</p><div class="price">500 ETB</div><button class="add-btn" data-name="Special Burger" data-price="500">Add to Cart</button></div></div>
+
+<div class="card"><div class="card-content"><h3>Sebez Double Special Burger</h3><p>Double beef, egg, cheese, lettuce, tomato and onion.</p><div class="price">580 ETB</div><button class="add-btn" data-name="Sebez Double Special Burger" data-price="580">Add to Cart</button></div></div>
+</div>
+
+<h3 class="category-title">🥪 Sandwiches</h3>
+<div class="menu-grid">
+<div class="card"><div class="card-content"><h3>Egg Sandwich</h3><div class="price">250 ETB</div><button class="add-btn" data-name="Egg Sandwich" data-price="250">Add to Cart</button></div></div>
+<div class="card"><div class="card-content"><h3>Tuna Sandwich</h3><div class="price">350 ETB</div><button class="add-btn" data-name="Tuna Sandwich" data-price="350">Add to Cart</button></div></div>
+<div class="card"><div class="card-content"><h3>Club Sandwich</h3><div class="price">400 ETB</div><button class="add-btn" data-name="Club Sandwich" data-price="400">Add to Cart</button></div></div>
+<div class="card"><div class="card-content"><h3>Fasting Club Sandwich</h3><div class="price">230 ETB</div><button class="add-btn" data-name="Fasting Club Sandwich" data-price="230">Add to Cart</button></div></div>
+<div class="card"><div class="card-content"><h3>Chips</h3><div class="price">200 ETB</div><button class="add-btn" data-name="Chips" data-price="200">Add to Cart</button></div></div>
+<div class="card"><div class="card-content"><h3>Tuna Club Sandwich</h3><div class="price">380 ETB</div><button class="add-btn" data-name="Tuna Club Sandwich" data-price="380">Add to Cart</button></div></div>
+</div>
+
+<h3 class="category-title">🥗 Salads</h3>
+<div class="menu-grid">
+<div class="card"><div class="card-content"><h3>Tuna Salad</h3><div class="price">320 ETB</div><button class="add-btn" data-name="Tuna Salad" data-price="320">Add to Cart</button></div></div>
+<div class="card"><div class="card-content"><h3>Special Salad</h3><div class="price">350 ETB</div><button class="add-btn" data-name="Special Salad" data-price="350">Add to Cart</button></div></div>
+</div>
+
+<h3 class="category-title">🌯 Wraps</h3>
+<div class="menu-grid">
+<div class="card"><div class="card-content"><h3>Chicken Wrap</h3><div class="price">380 ETB</div><button class="add-btn" data-name="Chicken Wrap" data-price="380">Add to Cart</button></div></div>
+<div class="card"><div class="card-content"><h3>Beef Wrap</h3><div class="price">350 ETB</div><button class="add-btn" data-name="Beef Wrap" data-price="350">Add to Cart</button></div></div>
+<div class="card"><div class="card-content"><h3>Vegetable Wrap</h3><div class="price">280 ETB</div><button class="add-btn" data-name="Vegetable Wrap" data-price="280">Add to Cart</button></div></div>
+</div>
+
+<div class="cart" id="order">
+<h3>🛒 Your Order Cart</h3>
+<div id="cart-items">Your cart is empty.</div>
+<h3 id="total">Total: 0 ETB</h3>
+
+<label for="order-type">Choose your service:</label>
+<select id="order-type">
+<option value="">Select order type</option>
+<option>Dine-in</option>
+<option>Takeaway</option>
+<option>Delivery</option>
+</select>
+
+<button class="btn" onclick="sendOrder()">Order on WhatsApp</button>
+<button class="btn" onclick="clearCart()">Clear Cart</button>
+</div>
+
 </section>
 
 <section class="contact" id="contact">
-  <h2>Visit Sebez Cafe</h2>
-  <p>We look forward to welcoming you!</p>
-  <p>Contact and WhatsApp ordering details coming soon.</p>
+<h2>Contact Sebez Cafe</h2>
+<p>We are happy to serve you!</p>
+
+<p>📞 Cafe phone:
+<a href="tel:+251911371615">+251911371615</a></p>
+
+<p>📞 Cashier:
+<a href="tel:0910020033">0910020033</a></p>
+
+<p>💬 WhatsApp:
+<a href="https://wa.me/251911371615">Chat with Sebez Cafe</a></p>
+
+<p>Dine-in | Takeaway | Delivery</p>
 </section>
 
 <footer>
-  © 2026 Sebez Cafe. All Rights Reserved.
-  <p>Delicious Moments, Every Day!</p>
+<p>© 2026 Sebez Cafe. All Rights Reserved.</p>
+<p>Delicious Moments, Every Day! 💚💛</p>
 </footer>
+
+<script>
+let cart = [];
+
+document.querySelectorAll(".add-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    const name = button.dataset.name;
+    const price = Number(button.dataset.price);
+
+    const item = cart.find(x => x.name === name);
+
+    if (item) {
+      item.quantity++;
+    } else {
+      cart.push({name, price, quantity: 1});
+    }
+
+    updateCart();
+    alert(name + " added to your cart!");
+  });
+});
+
+function updateCart() {
+  const container = document.getElementById("cart-items");
+  const totalElement = document.getElementById("total");
+
+  if (cart.length === 0) {
+    container.innerHTML = "Your cart is empty.";
+  } else {
+    container.innerHTML = cart.map(item =>
+      `<div class="cart-item">
+      <span>${item.name} × ${item.quantity}</span>
+      <span>${item.price === 0 ? "Price on request" : item.price * item.quantity + " ETB"}</span>
+      </div>`
+    ).join("");
+  }
+
+  const total = cart.reduce((sum, item) =>
+    sum + item.price * item.quantity, 0);
+
+  totalElement.textContent = "Total: " + total + " ETB";
+}
+
+function clearCart() {
+  cart = [];
+  updateCart();
+}
+
+function sendOrder() {
+  if (cart.length === 0) {
+    alert("Please add food to your cart first.");
+    return;
+  }
+
+  const orderType = document.getElementById("order-type").value;
+
+  if (!orderType) {
+    alert("Please choose dine-in, takeaway or delivery.");
+    return;
+  }
+
+  const total = cart.reduce((sum, item) =>
+    sum + item.price * item.quantity, 0);
+
+  let message = "Hello Sebez Cafe! I want to place an order.%0A";
+  message += "Service: " + encodeURIComponent(orderType) + "%0A%0A";
+  message += "My order:%0A";
+
+  cart.forEach(item => {
+    message += encodeURIComponent(item.name) +
+      " x " + item.quantity +
+      " - " + (item.price === 0 ? "Price on request" : item.price * item.quantity + " ETB") +
+      "%0A";
+  });
+
+  message += "%0ATotal: " + total + " ETB";
+  message += "%0APlease confirm my order. Thank you!";
+
+  window.open("https://wa.me/251911371615?text=" + message, "_blank");
+}
+</script>
 
 </body>
 </html>
