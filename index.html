@@ -214,6 +214,108 @@ footer {
 
 <header>
   <div class="logo">SEBEZ CAFE</div>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#menu">Menu</a>
+  <a href="#cart">My Cart</a>
+  <a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+  <h1>Welcome to Sebez Cafe</h1>
+  <p>Delicious Moments, Fresh Taste, Warm Hospitality.</p>
+  <a href="#menu" class="btn">Explore Our Menu</a>
+</section>
+
+<section id="about">
+  <h2>About Sebez Cafe</h2>
+  <p class="intro">
+    Welcome to Sebez Cafe! We serve delicious food,
+    fresh flavors, and warm hospitality.
+    Visit us and enjoy a memorable cafe experience.
+  </p>
+</section>
+
+<section class="menu-section" id="menu">
+  <h2>Our Delicious Menu</h2>
+  <p>Choose your favorite food and add it to your cart.</p>
+  <div id="menu-categories"></div>
+</section>
+
+<script>
+const menuGroups = [
+  ["🇪🇹 Ethiopian Food", [
+    ["Beyaynet",290],["Tegabino",200],["Sero feses",170],
+    ["Pasta be sego",220],["Pasta be atekelt",270],
+    ["Tematim lebleb",180],["Suf feteft",180],
+    ["Telba fetft",200],["Atekelt shorba",180],
+    ["Pasta be tuna",350],["Chechebsa",200],
+    ["Ful",150],["Tebs",380],["Dulet",370],
+    ["Kuanta fere",380],["Sega ferfer",370],
+    ["Tebes ferfer",350],["Dekak tebes",380],
+    ["Bozena shero",300],["Shero be kebe",250],
+    ["Pasta be sega",290]
+  ]],
+  ["🍕 Pizza", [
+    ["Sebez Special Pizza",700],["Margarita Pizza",480],
+    ["Chicken Pizza",530],["Beef Pizza",470],
+    ["Fasting Tuna Pizza",480],["Vegetable Pizza",390],
+    ["Tuna with Vegetable Pizza",460],["Tuna Pizza",480]
+  ]],
+  ["🍔 Burgers", [
+    ["Beef Burger",370],["Cheese Burger",480],
+    ["Special Burger",500],
+    ["Sebez Double Special Burger",580]
+  ]],
+  ["🥪 Sandwiches & Snacks", [
+    ["Egg Sandwich",250],["Tuna Sandwich",350],
+    ["Club Sandwich",400],["Fasting Club Sandwich",230],
+    ["Chips",200],["Tuna Club Sandwich",380]
+  ]],
+  ["🥗 Salads", [
+    ["Tuna Salad",320],["Special Salad",350]
+  ]],
+  ["🌯 Wraps", [
+    ["Chicken Wrap",380],["Beef Wrap",350],
+    ["Vegetable Wrap",280]
+  ]]
+];
+
+const menuArea = document.getElementById("menu-categories");
+
+menuGroups.forEach(group => {
+  const heading = document.createElement("h3");
+  heading.className = "category-title";
+  heading.textContent = group[0];
+  menuArea.appendChild(heading);
+
+  const grid = document.createElement("div");
+  grid.className = "menu-grid";
+
+  group[1].forEach(item => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <div class="card-content">
+        <h3>${item[0]}</h3>
+        <p class="price">${item[1]} ETB</p>
+        <button class="add-btn"
+          data-name="${item[0]}"
+          data-price="${item[1]}">
+          Add to Cart
+        </button>
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+
+  menuArea.appendChild(grid);
+});
+</script>
 <section id="cart">
   <h2>Your Shopping Cart</h2>
 
